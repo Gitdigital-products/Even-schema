@@ -1,0 +1,65 @@
+jest.config.js
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/tests'],
+  testMatch: ['**/*.test.ts'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+};
+```
+
+.eslintrc
+
+```json
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "warn"
+  }
+}
+```
+
+Installation & Build:
+
+```bash
+# Install dependencies
+npm install
+
+# Build the package
+npm run build
+
+# Run tests
+npm test
+
+# Publish (after configuring npm)
+npm publish
+```
+
+Usage in Other Projects:
+
+```typescript
+// In another repository
+import { DigitalEventSchema, validateDigitalEvent } from 'gitdigital-event-schema';
+
+// Use the schema to validate incoming events
+function processWebhook(payload: any) {
+  if (validateDigitalEvent(payload)) {
+    // Type-safe handling
+    console.log(`Processing ${payload.eventType} event`);
+  } else {
+    console.error('Invalid event received');
+  }
+}
