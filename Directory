@@ -1,0 +1,22 @@
+gitdigital-event-schema/
+├── package.json
+├── tsconfig.json
+├── README.md
+├── .npmignore
+├── src/
+│   ├── index.ts
+│   ├── schemas/
+│   │   ├── base-event.ts
+│   │   ├── git-events.ts
+│   │   ├── ci-events.ts
+│   │   └── index.ts
+│   ├── types/
+│   │   ├── index.ts
+│   │   └── validation.ts
+│   └── utils/
+│       └── validation.ts
+├── examples/
+│   └── example-usage.ts
+├── tests/
+│   └── event-validation.test.ts
+└── dist/ (generated)
