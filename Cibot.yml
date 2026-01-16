@@ -1,0 +1,2 @@
+- name: Github CI Bot
+  uses: wzshiming/gh-ci-bot@v1
